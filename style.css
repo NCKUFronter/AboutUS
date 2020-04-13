@@ -1,0 +1,313 @@
+body {
+  font-family: "ITC Eras", "Microsoft JhengHei", "Helvetica Neue", Helvetica;
+  background: #c1e8e3;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.main-img {
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  min-height: calc(100vh - 100px);
+}
+
+.content-el {
+  min-height: calc(100vh - 100px);
+}
+
+.col-half {
+  width: 50%;
+}
+
+.row,
+.column {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.profile > .left {
+  width: 64%;
+}
+
+.profile > .right {
+  width: 36%;
+}
+
+.profile-img {
+  width: 90%;
+  height: auto;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.profile-info > div {
+  width: 100%;
+}
+
+.navbar {
+  font-size: 50px;
+  text-align: center;
+  padding-top: 15px;
+  height: 80px;
+  word-spacing: 30px;
+  font-weight: 300;
+}
+
+.profile-info h1 {
+  margin-bottom: 0;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.profile-info h2 {
+  font-size: 2rem;
+  margin: 4em 0 1em 0;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.modal {
+  background: rgba(233, 233, 233, 0.9);
+  position: absolute;
+  width: 90%;
+  top: 85px;
+  left: 0;
+  right: 0;
+  margin: 0 5%;
+  overflow: auto;
+}
+
+.modal .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 3rem;
+  width: 5px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 5%;
+}
+
+.item {
+  margin: 0 0.5%;
+  height: 80vh;
+  cursor: pointer;
+  color: #ffffff;
+  opacity: 1;
+  position: relative;
+}
+
+.item img {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.item h1 {
+  position: absolute;
+  left: 20px;
+  bottom: 3vh;
+  font-size: 25px;
+  opacity: 0;
+  line-height: 40px;
+}
+
+.item.higher {
+  align-self: flex-start;
+}
+.item.lower {
+  align-self: center;
+}
+
+.item:hover {
+  transition-duration: 0.5s;
+  position: relative;
+  background-color: black;
+}
+
+.item.higher:hover {
+  bottom: 2px;
+}
+
+.item.lower:hover {
+  top: 2px;
+}
+
+.item:hover img {
+  opacity: 0.5;
+}
+
+.item:hover h1 {
+  opacity: 1;
+}
+
+.iOver {
+  opacity: 0.5;
+}
+
+.initial_item_higher {
+  animation-name: initial_item_higher;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+.initial_item_lower {
+  animation-name: initial_item_lower;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes initial_item_higher {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+@keyframes initial_item_lower {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+/*
+.item_lower-click,
+.item_higher-click {
+  margin: 0 0.5%;
+  height: 80vh;
+  color: #ffffff;
+  opacity: 1;
+}
+.item_higher-click {
+  align-self: flex-start;
+}
+.item_lower-click {
+  align-self: center;
+}
+*/
+
+.modal-show {
+  animation-name: modal-show;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.modal-close {
+  animation-name: modal-close;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.img-hid {
+  animation-name: img-hid;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.img-click-hid {
+  animation-name: img-hid;
+  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-hid {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-show {
+  0% {
+    opacity: 0;
+    transform: scale(1, 0);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes modal-close{
+  0% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1, 0);
+  }
+}
